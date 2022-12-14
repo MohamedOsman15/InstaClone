@@ -33,11 +33,7 @@ function App() {
   return (
     <div className="App">
       <header>
-      <Nav
-          authenticated={authenticated}
-          user={user}
-          handleLogOut={handleLogOut}
-        />
+
       </header>
       <main>
         <Routes>
@@ -55,6 +51,13 @@ function App() {
           />} />
         </Routes>
       </main>
+      <footer>
+      <Nav
+          authenticated={authenticated}
+          user={user}
+          handleLogOut={handleLogOut}
+        />
+      </footer>
     </div>
   );
 }

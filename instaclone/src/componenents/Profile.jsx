@@ -23,7 +23,7 @@ const Profile = () => {
     return (
         <div className="profilePage">
             <div>
-                <h3 className="user">{user}</h3>
+                <h2 className="user">{user}</h2>
                 <div className="posts">
                 {posts.map((res) => {
                     return (

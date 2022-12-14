@@ -2,7 +2,11 @@ import { useNavigate, Link } from 'react-router-dom'
 
 
 const Home = ({authenticated}) => {
+    const navigate = useNavigate()
         let data = null
+        if (authenticated === true) {
+            navigate("/feed")
+        }
         const page = () => { 
             console.log({authenticated})
             if(authenticated === true) {

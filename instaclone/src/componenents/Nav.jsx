@@ -7,9 +7,11 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
   if (user) {
     authenticatedOptions = (
       <nav className="navBar">
-        <Link to="/">Home</Link>
+        <Link to="/feed">
+          <h3>Home</h3>
+          </Link>
         <Link id="sign-out" onClick={handleLogOut} to="/">
-          Sign Out
+          <h3>Sign Out</h3>
         </Link>
       </nav>
     )
