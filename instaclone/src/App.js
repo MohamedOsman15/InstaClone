@@ -1,11 +1,12 @@
 import { Route, Routes } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import './App.css';
-import Home from './componenents/Home'
+import Home from './componenents/Home';
 import Login from './componenents/Login';
 import Register from './componenents/Register';
 import Nav from './componenents/Nav';
-import Feed from './componenents/Feed'
+import Feed from './componenents/Feed';
+import Profile from './componenents/Profile';
 import { CheckSession } from './services/auth';
 
 function App() {
@@ -49,6 +50,8 @@ function App() {
           toggleAuthenticated={toggleAuthenticated}
           /> } />
           <Route path='/feed' element={<Feed 
+          />} />
+          <Route path='/user/:userId' element={<Profile
           />} />
         </Routes>
       </main>
