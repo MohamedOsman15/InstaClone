@@ -32,7 +32,7 @@ const Feed = () => {
                             for (let i = 0; i < comments.length; i++) {
                                 if (comment.postId === res.id ) {
                                     return (
-                                        <div>
+                                        <div className="comments">
                                             {users.map((user) => {
                                                 for (let i = 0; i < users.length; i++) {
                                                     if (user.id === comment.userId) {
