@@ -12,18 +12,30 @@ const Profile = () => {
         const api = async () => {
             let res = await axios.get(`${BASE_URL}api/posts/${userId}`)
             setPosts(res.data)
-            res = await axios.get(`${BASE_URL}api/users/${userId}`)
-            setUser(res.data)
-            console.log(posts, user)
+            let res2 = await axios.get(`${BASE_URL}api/users/${userId}`)
+            setUser(res2.data)
         }
         api()
     }, [])
+    console.log(user)
+    console.log(posts)
 
     return (
-        <div className="ProfilePage">
-
+        <div className="profilePage">
+            <div>
+                <h3 className="user">{user}</h3>
+                <div className="posts">
+                {posts.map((res) => {
+                    return (
+                        <div className="post" key={res.id}>
+                        <img src={res.image}/>
+                        <p>{res.caption}</p>
+                    </div>
+                )})}    
+                </div>
+            </div>
         </div>
-    )
+    )       
 }
 
 export default Profile
