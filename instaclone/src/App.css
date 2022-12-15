@@ -79,5 +79,7 @@ form {
 }
 
 /* Login */
-
+.login-form {
+  text-align: center;
+}
 /* Home */
