@@ -17,7 +17,7 @@ const Home = ({authenticated}) => {
                 )
             } else {
                 data = (
-                    <div classname="home">
+                    <div>
                             <h1>InstaClone</h1>
                             <h4>Please login or register</h4>
                             <p>If you'd like to browse as a guest with limited features click here</p>
@@ -36,7 +36,7 @@ const Home = ({authenticated}) => {
     page()
     
     return (
-        <div>
+        <div classname="home">
         {data}
         </div>
     )
