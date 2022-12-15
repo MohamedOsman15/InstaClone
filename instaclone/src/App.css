@@ -18,9 +18,11 @@
 }
 
 .post {
+  padding-top: 50px;
   margin: auto;
-  height: 800px;
-  width: 800px;
+  height: 600px;
+  width: 600px;
+  margin-bottom: 20px;
 }
 
 .post > img {
@@ -103,15 +105,23 @@ form {
 
 .PostPage {
   padding-bottom: 850px;
-  padding-top: 200px;
   text-align: center;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: 1fr, 1fr;
+  display: flex;
+  justify-content: center;
+  gap: 300px;
 }
 
 .preview {
   text-align: left;
+}
+
+.child1 {
+  padding-top: 50px;
+}
+
+.child {
+  padding-top: 200px;
 }

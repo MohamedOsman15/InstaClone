@@ -2,7 +2,7 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import { useState, } from "react"
 import { BASE_URL } from "../services/api"
-import InstagramPost from "./InstagramCard"
+import InstagramPreview from "./InstagramCardPreview"
 
 const AddPost = ({user}) => {
     const navigate = useNavigate()
@@ -12,6 +12,15 @@ const AddPost = ({user}) => {
     image: ""
   }
   const [formValues, setFormValues] = useState(initialFormValues)
+  const [thisUser, getUserData] = useState(initialFormValues)
+
+
+let x = ""
+  const userId = async () => {
+    x = await axios.get(`${BASE_URL}api/users/${user.id}`)
+    getUserData(x.data)
+  }
+  userId()
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
@@ -60,10 +69,10 @@ return (
             </div>
           </form>
             </div>
-            <div className="child">
+            <div className="child1">
             <h3>Post Preview:</h3>
             <div  className="post preview">
-            <InstagramPost image={formValues.image} user={user.displayName} userId={user.id} caption={formValues.caption}/>
+            <InstagramPreview image={formValues.image} user={thisUser} userId={user.id} caption={formValues.caption}/>
             </div>
             </div>
         </div>

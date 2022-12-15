@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { BASE_URL } from "../services/api";
 import InstagramPost from "./InstagramCard";
 
-const Feed = () => {
+const Feed = (userId) => {
     const [posts, updatePosts] = useState([])
     const [comments, updateComments] = useState([])
     const [users, updateUsers] = useState([])
@@ -21,7 +21,7 @@ const Feed = () => {
         
         api()
     }, [])
-
+ 
 let emptyComment = "comments"
 
 
@@ -33,7 +33,7 @@ let emptyComment = "comments"
                         {users.map((user) => {
                             if(user.id === res.userId) {
                                 return (
-                                    <InstagramPost image ={res.image} user = {user.displayName} userId = {user.id} caption = {res.caption} postId = {res.id} />
+                                    <InstagramPost image ={res.image} userId={userId} user = {user.displayName} caption = {res.caption} postId = {res.id} />
                                 )
                             }
                         })}
