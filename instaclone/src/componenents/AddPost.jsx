@@ -62,7 +62,7 @@ return (
             </div>
             <div>
             <h3>Post Preview:</h3>
-            <InstagramPost />
+            <InstagramPost className="preview" image={formValues.image} user={user.displayName} userId={user.id} caption={formValues.caption}/>
             </div>
         </div>
     </div>
