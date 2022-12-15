@@ -12,9 +12,7 @@ import Typography from '@mui/joy/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import ModeCommentOutlined from '@mui/icons-material/ModeCommentOutlined';
-import SendOutlined from '@mui/icons-material/SendOutlined';
 import Face from '@mui/icons-material/Face';
-import BookmarkBorderRoundedIcon from '@mui/icons-material/BookmarkBorderRounded';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -82,7 +80,6 @@ export default function InstagramPreview( {image, user, userId, caption, deleteP
             <ModeCommentOutlined />
           </IconButton>
           <IconButton variant="plain" color="neutral" size="sm">
-            <SendOutlined />
           </IconButton>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mx: 'auto' }}>
@@ -100,7 +97,6 @@ export default function InstagramPreview( {image, user, userId, caption, deleteP
         </Box>
         <Box sx={{ width: 0, display: 'flex', flexDirection: 'row-reverse' }}>
           <IconButton variant="plain" color="neutral" size="sm">
-            <BookmarkBorderRoundedIcon />
           </IconButton>
         </Box>
       </Box>

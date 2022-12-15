@@ -92,7 +92,6 @@ export default function InstagramPost( {image, user, userId, caption, postId}  )
             <ModeCommentOutlined />
           </IconButton>
           <IconButton variant="plain" color="neutral" size="sm">
-            <SendOutlined />
           </IconButton>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mx: 'auto' }}>
