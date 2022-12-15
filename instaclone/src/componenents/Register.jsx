@@ -36,7 +36,7 @@ const Register = () => {
   <div>
 
       <div className="form">
-        <div className="Register-form">
+        <div className="register-form">
         <h1>Register to create account</h1>
           <form className="register" onSubmit={handleSubmit}>
             <div className="input-container">

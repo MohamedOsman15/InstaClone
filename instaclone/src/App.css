@@ -78,6 +78,11 @@ form {
   
 }
 
+.register-form {
+  padding-top: 200px;
+  text-align: center;
+}
+
 /* Login */
 .login-form {
   text-align: center;
