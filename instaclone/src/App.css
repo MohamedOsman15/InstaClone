@@ -63,7 +63,10 @@
 }
 
 /* Register */
-
+.register-form {
+  text-align: center;
+  height: 1000px;
+}
 
 /* Login */
 

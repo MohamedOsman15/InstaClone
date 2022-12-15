@@ -33,7 +33,8 @@ const Register = () => {
   }
 }
   return (
-  
+  <div>
+
       <div className="register-form">
         <h1>Register to create account</h1>
         <div className="form">
@@ -47,7 +48,7 @@ const Register = () => {
                     placeholder="username"
                     name="username"
                     required
-                  />
+                    />
                 </ul>
                 <ul>
                   <input
@@ -57,7 +58,7 @@ const Register = () => {
                     placeholder="Display"
                     name="displayName"
                     required
-                  />
+                    />
                 </ul>
                 <ul>
                   <input
@@ -67,7 +68,7 @@ const Register = () => {
                     placeholder="password"
                     name="password"
                     required
-                  />
+                    />
                 </ul>
                 <ul>
                   <input
@@ -77,7 +78,7 @@ const Register = () => {
                     placeholder="password"
                     name="confirmPassword"
                     required
-                  />
+                    />
                 </ul>
                 <ul><p className={pass}>Passwords are not the same</p></ul>
               
@@ -87,12 +88,13 @@ const Register = () => {
                 <input
                   type="submit"
                   disabled={!formValues.username || !formValues.password}
-                />
+                  />
               </ul>
             </div>
           </form>
         </div>
       </div>
+                  </div>
   )
 }
 export default Register
