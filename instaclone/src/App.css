@@ -42,3 +42,22 @@
   color: white;
 }
 
+.posts {
+  margin: auto;
+  margin-bottom: 150px;
+  height: 300px;
+  width: 300px;
+}
+
+.allPosts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 35px;
+  grid-row-gap: 35px;
+}
+
+.profileName {
+  border-bottom: #6afaff71 3px solid;
+  margin-bottom: 20px;
+}
