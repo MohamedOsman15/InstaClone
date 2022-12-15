@@ -63,9 +63,19 @@
 }
 
 /* Register */
-.register-form {
+form {
   text-align: center;
   height: 1000px;
+}
+
+.right {
+  display: none;
+}
+
+.wrong {
+  color: rgb(255, 0, 76);
+  text-decoration: underline;
+  
 }
 
 /* Login */
