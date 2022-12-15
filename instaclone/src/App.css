@@ -81,5 +81,6 @@ form {
 /* Login */
 .login-form {
   text-align: center;
+  padding-top: 20px;
 }
 /* Home */
