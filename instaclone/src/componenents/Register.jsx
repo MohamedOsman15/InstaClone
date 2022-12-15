@@ -40,7 +40,6 @@ const Register = () => {
           <form className="register" onSubmit={handleSubmit}>
             <div className="input-container">
                 <ul>
-                  <label>Username: </label>
                   <input
                     type="text"
                     onChange={handleChange}
@@ -51,7 +50,6 @@ const Register = () => {
                   />
                 </ul>
                 <ul>
-                  <label>Display Name: </label>
                   <input
                     type="text"
                     onChange={handleChange}
@@ -62,7 +60,6 @@ const Register = () => {
                   />
                 </ul>
                 <ul>
-                  <label>Password: </label>
                   <input
                     type="password"
                     onChange={handleChange}
@@ -73,7 +70,6 @@ const Register = () => {
                   />
                 </ul>
                 <ul>
-                  <label>Confirm Password: </label>
                   <input
                     type="password"
                     onChange={handleChange}
