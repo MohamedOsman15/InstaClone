@@ -11,6 +11,7 @@ const Profile = () => {
     const [user, setUser] = useState([])
     const { userId } = useParams() 
 
+
     useEffect(() => {
         const api = async () => {
             let res = await axios.get(`${BASE_URL}api/posts/${userId}`)
@@ -52,6 +53,7 @@ const Profile = () => {
                             />
                         </Box>
                     <h2 className="user">{user}</h2>
+                    <h2 className="postButton">Post</h2>
                     </Box>
                 </div>
               
