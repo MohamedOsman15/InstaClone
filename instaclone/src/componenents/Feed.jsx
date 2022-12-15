@@ -6,6 +6,16 @@ const Feed = () => {
     const [posts, updatePosts] = useState([])
     const [comments, updateComments] = useState([])
     const [users, updateUsers] = useState([])
+    const commentList = []
+
+    const commentMap = () => {
+        comments.forEach(comment => {
+            if (comments !== null){
+                commentList.push(comment)
+            }
+        })
+    }
+    commentMap()
 
     useEffect(() => {
         const api = async () => {
@@ -20,6 +30,8 @@ const Feed = () => {
         api()
     }, [])
 
+let emptyComment = "comments"
+
 
     return (
         <div className="feed">
@@ -28,27 +40,33 @@ const Feed = () => {
                     <div className="post" key={res.key}>
                         <img src={res.image}/>
                         <p>{res.caption}</p>
-                        {comments.map((comment) => {
-                            for (let i = 0; i < comments.length; i++) {
-                                if (comment.postId === res.id ) {
-                                    return (
-                                        <div className="comments">
+                            {commentList.map((comment) => {
+                                for (let i = 0; i < comments.length; i++) {
+                                    let x = 0
+                                    if (comment.postId === res.id ) {
+                                        x += 1
+                                        emptyComment = "comments"
+                                        return (
+                                            <div className="comment">
                                             {users.map((user) => {
                                                 for (let i = 0; i < users.length; i++) {
                                                     if (user.id === comment.userId) {
                                                         return (
                                                             <p>{user.displayName}:</p>
-                                                        )
+                                                            )
+                                                        }
                                                     }
-                                                }
-                                            })}
-                                            <p>{comment.comment}</p>
+                                                })}
+                                            <p className="inner">{comment.comment}</p>
                                         </div>
                                     )
                                 }
+                                if(x === 0) {
+                                    emptyComment = "noComment"
+                                }
                             }
                         })}
-                    </div>
+                        </div>
                 )
             })}
         </div>

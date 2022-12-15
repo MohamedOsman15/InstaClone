@@ -1,11 +1,15 @@
 .App {
   text-align: center;
-}
-
-footer {
-  position: sticky;
-  bottom: 0;
-  padding: 10px;
+  color: white;
+  background-color: #00DBDE;
+  background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+    /* go to CSSgradient.io to make gradients */
+  }
+  
+  footer {
+    position: sticky;
+    bottom: 0;
+    background-color: rgba(255, 27, 236, 0.664);
 }
 
 .user {
@@ -15,15 +19,43 @@ footer {
 }
 
 .post {
-  height: 300px;
-  width: 300px;
-}
-.post > img {
-  height: 200px;
-  width: 200px;
+  margin: auto;
+  height: 800px;
+  width: 800px;
 }
 
-.posts .comments {
-  height: 80px;
-  overflow: scroll;
+.post > img {
+  height: 500px;
+  width: 500px;
+  object-fit: cover;
 }
+
+.post .comments {
+  height: 180px;
+  overflow-y: scroll;
+}
+
+.comments {
+  background-color: rgba(174, 217, 255, 0.514);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.comment {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.navBar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  color: white;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+

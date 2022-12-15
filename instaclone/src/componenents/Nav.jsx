@@ -8,13 +8,13 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
     let id = `/user/${user.id}`
     authenticatedOptions = (
       <nav className="navBar">
-        <Link to="/feed">
+        <Link className='link' to="/feed">
           <h3>Home</h3>
           </Link>
-        <Link id="profile" to={id}>
+        <Link className='link' id="profile" to={id}>
           <h3>Profile</h3>
         </Link>
-        <Link id="sign-out" onClick={handleLogOut} to="/">
+        <Link className='link' id="sign-out" onClick={handleLogOut} to="/">
           <h3>Sign Out</h3>
         </Link>
         
@@ -24,14 +24,14 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
 
   const openOptions = (
   <nav className="navBar">
-      <Link to="/">
+      <Link className='link' to="/">
     <h3>Home</h3>
       </Link>
 
-      <Link to="/login">
+      <Link className='link' to="/login">
     <h3>Login</h3>
       </Link>
-      <Link to="/register">
+      <Link className='link' to="/register">
     <h3>Register</h3>
       </Link>
   </nav>
