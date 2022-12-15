@@ -36,7 +36,7 @@ const Home = ({authenticated}) => {
     page()
     
     return (
-        <div classname="home">
+        <div className="home">
         {data}
         </div>
     )
