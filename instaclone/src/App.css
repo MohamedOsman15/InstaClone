@@ -94,3 +94,7 @@ form {
   height: 900px;
   padding-top: 100px;
 }
+
+.postButton {
+  margin-left: 80%;
+}
