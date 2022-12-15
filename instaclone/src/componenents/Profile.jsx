@@ -53,7 +53,7 @@ const Profile = () => {
                             />
                         </Box>
                     <h2 className="user">{user}</h2>
-                    <h2 className="postButton">Post</h2>
+                    <h2 className="postButton">New Post</h2>
                     </Box>
                 </div>
               

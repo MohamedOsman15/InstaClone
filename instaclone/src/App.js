@@ -8,6 +8,7 @@ import Nav from './componenents/Nav';
 import Feed from './componenents/Feed';
 import Profile from './componenents/Profile';
 import { CheckSession } from './services/auth';
+import AddPost from './componenents/AddPost';
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -49,6 +50,7 @@ function App() {
           />} />
           <Route path='/user/:userId' element={<Profile
           />} />
+          <Route path='/newpost' element={<AddPost /> } />
         </Routes>
       </main>
       <footer>
