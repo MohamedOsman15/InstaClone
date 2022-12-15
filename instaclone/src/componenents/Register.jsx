@@ -39,8 +39,7 @@ const Register = () => {
         <div className="form">
           <form className="register" onSubmit={handleSubmit}>
             <div className="input-container">
-              <ul>
-                <li>
+                <ul>
                   <label>Username: </label>
                   <input
                     type="text"
@@ -50,8 +49,8 @@ const Register = () => {
                     name="username"
                     required
                   />
-                </li>
-                <li>
+                </ul>
+                <ul>
                   <label>Display Name: </label>
                   <input
                     type="text"
@@ -61,8 +60,8 @@ const Register = () => {
                     name="displayName"
                     required
                   />
-                </li>
-                <li>
+                </ul>
+                <ul>
                   <label>Password: </label>
                   <input
                     type="password"
@@ -72,8 +71,8 @@ const Register = () => {
                     name="password"
                     required
                   />
-                </li>
-                <li>
+                </ul>
+                <ul>
                   <label>Confirm Password: </label>
                   <input
                     type="password"
@@ -83,9 +82,9 @@ const Register = () => {
                     name="confirmPassword"
                     required
                   />
-                </li>
-                <li><p className={pass}>Passwords are not the same</p></li>
-              </ul>
+                </ul>
+                <ul><p className={pass}>Passwords are not the same</p></ul>
+              
             </div>
             <div className="button-container">
               <ul>
