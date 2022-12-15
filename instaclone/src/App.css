@@ -103,9 +103,15 @@ form {
 
 .PostPage {
   padding-bottom: 850px;
-  padding-top: 10px;
+  padding-top: 200px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
 }
 
 .preview {
-  height: 100px;
+  text-align: left;
 }

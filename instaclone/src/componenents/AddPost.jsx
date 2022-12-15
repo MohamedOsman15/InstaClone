@@ -26,7 +26,7 @@ const AddPost = ({user}) => {
 return (
     <div className="PostPage">
         <div className="grid">
-            <div>
+            <div className="child">
             <form className="register" onSubmit={handleSubmit}>
             <div className="input-container">
                 <ul>
@@ -60,9 +60,9 @@ return (
             </div>
           </form>
             </div>
-            <div>
+            <div className="child">
             <h3>Post Preview:</h3>
-            <div  className="post">
+            <div  className="post preview">
             <InstagramPost image={formValues.image} user={user.displayName} userId={user.id} caption={formValues.caption}/>
             </div>
             </div>
