@@ -1,21 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../services/api";
+import InstagramPost from "./InstagramCard";
 
 const Feed = () => {
     const [posts, updatePosts] = useState([])
     const [comments, updateComments] = useState([])
     const [users, updateUsers] = useState([])
-    const commentList = []
 
-    const commentMap = () => {
-        comments.forEach(comment => {
-            if (comments !== null){
-                commentList.push(comment)
-            }
-        })
-    }
-    commentMap()
 
     useEffect(() => {
         const api = async () => {
@@ -38,39 +30,19 @@ let emptyComment = "comments"
             {posts.map((res) => {
                 return (
                     <div className="post" key={res.key}>
-                        <img src={res.image}/>
-                        <p>{res.caption}</p>
-                            {commentList.map((comment) => {
-                                for (let i = 0; i < comments.length; i++) {
-                                    let x = 0
-                                    if (comment.postId === res.id ) {
-                                        x += 1
-                                        emptyComment = "comments"
-                                        return (
-                                            <div className="comment">
-                                            {users.map((user) => {
-                                                for (let i = 0; i < users.length; i++) {
-                                                    if (user.id === comment.userId) {
-                                                        return (
-                                                            <p>{user.displayName}:</p>
-                                                            )
-                                                        }
-                                                    }
-                                                })}
-                                            <p className="inner">{comment.comment}</p>
-                                        </div>
-                                    )
-                                }
-                                if(x === 0) {
-                                    emptyComment = "noComment"
-                                }
+                        {users.map((user) => {
+                            if(user.id === res.userId) {
+                                return (
+                                    <InstagramPost image ={res.image} user = {user.displayName} caption = {res.caption} />
+                                )
                             }
                         })}
-                        </div>
+                    </div>
                 )
             })}
-        </div>
+    </div>
     )
 }
+
 
 export default Feed

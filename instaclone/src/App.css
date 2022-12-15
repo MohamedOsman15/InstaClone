@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   color: white;
   background-color: #00DBDE;
   background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
@@ -30,22 +29,6 @@
   object-fit: cover;
 }
 
-.post .comments {
-  height: 180px;
-  overflow-y: scroll;
-}
-
-.comments {
-  background-color: rgba(174, 217, 255, 0.514);
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.comment {
-  display: flex;
-  justify-content: flex-start;
-  gap: 20px;
-}
 
 .navBar {
   display: flex;

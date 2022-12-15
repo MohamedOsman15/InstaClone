@@ -16,7 +16,7 @@ import SendOutlined from '@mui/icons-material/SendOutlined';
 import Face from '@mui/icons-material/Face';
 import BookmarkBorderRoundedIcon from '@mui/icons-material/BookmarkBorderRounded';
 
-export default function InstagramPost( image, user, caption  ) {
+export default function InstagramPost( {image, user, caption}  ) {
   return (
     <Card
       variant="outlined"
@@ -49,7 +49,8 @@ export default function InstagramPost( image, user, caption  ) {
             sx={{ p: 0.5, border: '2px solid', borderColor: 'background.body' }}
           />
         </Box>
-        <Typography fontWeight="lg">MUI</Typography>
+                                 {/* USER */}
+        <Typography fontWeight="lg">{user}</Typography>
         <IconButton variant="plain" color="neutral" size="sm" sx={{ ml: 'auto' }}>
           <MoreHoriz />
         </IconButton>
@@ -57,7 +58,7 @@ export default function InstagramPost( image, user, caption  ) {
       <CardOverflow>
         <AspectRatio>
             {/* IMAGE */}
-          <img src="/static/images/cards/yosemite.jpeg" alt="" loading="lazy" />
+          <img src={image} alt="" loading="lazy" />
         </AspectRatio>
       </CardOverflow>
       <Box sx={{ display: 'flex', alignItems: 'center', mx: -1, my: 1 }}>
@@ -107,12 +108,9 @@ export default function InstagramPost( image, user, caption  ) {
           fontWeight="lg"
           textColor="text.primary"
         >
-
-        {/* USER */}
-          MUI
         </Link>{' '}
               {/* CAPTION */}
-        The React component library you always wanted
+        {caption}
       </Typography>
       <Link
         component="button"
