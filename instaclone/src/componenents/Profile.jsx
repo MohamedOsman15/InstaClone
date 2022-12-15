@@ -3,7 +3,7 @@ import Avatar from '@mui/joy/Avatar';
 import { Box } from "@mui/system";
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../services/api";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import InstagramPost from "./InstagramCard";
 
 const Profile = () => {
@@ -53,7 +53,7 @@ const Profile = () => {
                             />
                         </Box>
                     <h2 className="user">{user}</h2>
-                    <h2 className="postButton">New Post</h2>
+                    <Link to={"/addpost"} className="postButton link">New Post</Link>
                     </Box>
                 </div>
               
