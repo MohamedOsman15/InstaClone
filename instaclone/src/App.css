@@ -100,3 +100,8 @@ form {
   font-size: 24px;
   font-weight: bold;
 }
+
+.PostPage {
+  padding-bottom: 850px;
+  padding-top: 10px;
+}

@@ -53,7 +53,7 @@ const Profile = () => {
                             />
                         </Box>
                     <h2 className="user">{user}</h2>
-                    <Link to={"/addpost"} className="postButton link">New Post</Link>
+                    <Link to={"/newpost"} className="postButton link">New Post</Link>
                     </Box>
                 </div>
               
