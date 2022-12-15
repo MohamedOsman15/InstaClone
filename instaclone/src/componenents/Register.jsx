@@ -33,7 +33,7 @@ const Register = () => {
   }
 }
   return (
-    <div id="register-img">
+  
       <div className="register-form">
         <h1>Register to create account</h1>
         <div className="form">
@@ -98,7 +98,6 @@ const Register = () => {
           </form>
         </div>
       </div>
-    </div>
   )
 }
 export default Register
