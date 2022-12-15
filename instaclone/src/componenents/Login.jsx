@@ -18,7 +18,7 @@ const Login = ({ setUser, toggleAuthenticated }) => {
     Navigate('/feed')
   }
   return (
-    <div className="login">
+    <div className="form">
       <div className="login-form">
         <h1>Login</h1>
         <div className="form">
