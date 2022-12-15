@@ -18,21 +18,25 @@ import BookmarkBorderRoundedIcon from '@mui/icons-material/BookmarkBorderRounded
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../services/api";
+import { useNavigate } from 'react-router-dom';
 
 
 
-export default function InstagramPost( {image, user, caption, postId}  ) {
+export default function InstagramPost( {image, user, userId, caption, postId}  ) {
     const [comments, updateComments] = useState([])
+    const navigate = useNavigate()
 
+    const clicked = () => {
+        navigate(`/user/${userId}`)
+    }
     useEffect(() => {
         const api = async () => {
-            let res = await axios.get(`${BASE_URL}api/comments/${postId}`)
+            let res = await axios.get(`${BASE_URL}api/comments/post/${postId}`)
             updateComments(res.data)
-            console.log(res)
         }
-        console.log(comments)
         api()
     }, [])
+
 
   return (
     <Card
@@ -64,6 +68,7 @@ export default function InstagramPost( {image, user, caption, postId}  ) {
             size="sm"
             src="/static/logo.png"
             sx={{ p: 0.5, border: '2px solid', borderColor: 'background.body' }}
+            onClick={clicked}
           />
         </Box>
                                  {/* USER */}
@@ -116,7 +121,7 @@ export default function InstagramPost( {image, user, caption, postId}  ) {
         fontWeight="lg"
         textColor="text.primary"
       >
-        8.1M Likes
+        {Math.floor(Math.random() * 101)} M
       </Link>
       <Typography fontSize="sm">
         <Link
@@ -145,18 +150,13 @@ export default function InstagramPost( {image, user, caption, postId}  ) {
         sx={{ color: 'text.tertiary', my: 0.5 }}
       >
         2 DAYS AGO
+
       </Link>
       <CardOverflow sx={{ p: 'var(--Card-padding)', display: 'flex' }}>
         <IconButton size="sm" variant="plain" color="neutral" sx={{ ml: -1 }}>
           <Face />
         </IconButton>
-        {comments.map((x) => {
-            if (x.postId !== postId ){
-                return (
-                    <p>{x.comment}</p>
-                )
-            }
-        })}
+ 
         <Input
           variant="plain"
           size="sm"
