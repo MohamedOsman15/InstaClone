@@ -33,7 +33,7 @@ let emptyComment = "comments"
                         {users.map((user) => {
                             if(user.id === res.userId) {
                                 return (
-                                    <InstagramPost image ={res.image} user = {user.displayName} caption = {res.caption} />
+                                    <InstagramPost image ={res.image} user = {user.displayName} caption = {res.caption} postId = {res.id} />
                                 )
                             }
                         })}

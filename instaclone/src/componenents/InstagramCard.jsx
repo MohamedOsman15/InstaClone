@@ -15,8 +15,25 @@ import ModeCommentOutlined from '@mui/icons-material/ModeCommentOutlined';
 import SendOutlined from '@mui/icons-material/SendOutlined';
 import Face from '@mui/icons-material/Face';
 import BookmarkBorderRoundedIcon from '@mui/icons-material/BookmarkBorderRounded';
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { BASE_URL } from "../services/api";
 
-export default function InstagramPost( {image, user, caption}  ) {
+
+
+export default function InstagramPost( {image, user, caption, postId}  ) {
+    const [comments, updateComments] = useState([])
+
+    useEffect(() => {
+        const api = async () => {
+            let res = await axios.get(`${BASE_URL}api/comments/${postId}`)
+            updateComments(res.data)
+            console.log(res)
+        }
+        console.log(comments)
+        api()
+    }, [])
+
   return (
     <Card
       variant="outlined"
@@ -133,6 +150,13 @@ export default function InstagramPost( {image, user, caption}  ) {
         <IconButton size="sm" variant="plain" color="neutral" sx={{ ml: -1 }}>
           <Face />
         </IconButton>
+        {comments.map((x) => {
+            if (x.postId !== postId ){
+                return (
+                    <p>{x.comment}</p>
+                )
+            }
+        })}
         <Input
           variant="plain"
           size="sm"
