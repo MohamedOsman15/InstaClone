@@ -105,3 +105,7 @@ form {
   padding-bottom: 850px;
   padding-top: 10px;
 }
+
+.preview {
+  height: 100px;
+}
