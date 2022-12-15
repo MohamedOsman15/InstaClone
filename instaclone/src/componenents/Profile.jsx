@@ -4,13 +4,25 @@ import { Box } from "@mui/system";
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../services/api";
 import { Link, useParams } from "react-router-dom";
-import InstagramPost from "./InstagramCard";
+import InstagramPreview from "./InstagramCardPreview";
 
 const Profile = () => {
     const [posts, setPosts] = useState([])
     const [user, setUser] = useState([])
     const { userId } = useParams() 
 
+
+    const getPosts = async () => {
+        let res = await axios.get(`${BASE_URL}api/posts/${userId}`)
+        setPosts(res.data)
+    }
+
+    getPosts()
+    
+    const deletePost = async (x) => {
+        await axios.delete(`${BASE_URL}api/posts/${x}`)
+        getPosts()
+    }
 
     useEffect(() => {
         const api = async () => {
@@ -21,8 +33,6 @@ const Profile = () => {
         }
         api()
     }, [])
-    console.log(user)
-    console.log(posts)
 
     return (
         <div className="profilePage">
@@ -53,7 +63,7 @@ const Profile = () => {
                             />
                         </Box>
                     <h2 className="user">{user}</h2>
-                    <Link to={"/newpost"} className="postButton link">New Post</Link>
+                    <Link to={`/newpost/${userId}`} className="postButton link">New Post</Link>
                     </Box>
                 </div>
               
@@ -61,7 +71,7 @@ const Profile = () => {
                 {posts.map((res) => {
                     return (
                         <div className="posts">
-                            <InstagramPost image={res.image} user={user} userId={userId} caption={res.caption} postId={res.id}/>
+                            <InstagramPreview deletePost={() => deletePost(res.id)} image={res.image} user={user} userId={userId} caption={res.caption} postId={res.id}/>
                         </div>
                         )})}    
                 </div>

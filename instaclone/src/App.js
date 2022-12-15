@@ -47,10 +47,11 @@ function App() {
           toggleAuthenticated={toggleAuthenticated}
           /> } />
           <Route path='/feed' element={<Feed 
+          user = {user}
           />} />
           <Route path='/user/:userId' element={<Profile
           />} />
-          <Route path='/newpost' element={<AddPost
+          <Route path='/newpost/:userId' element={<AddPost
           user = {user}
           /> } />
         </Routes>

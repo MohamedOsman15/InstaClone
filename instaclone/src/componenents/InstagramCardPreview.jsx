@@ -9,7 +9,7 @@ import Link from '@mui/joy/Link';
 import IconButton from '@mui/joy/IconButton';
 import Input from '@mui/joy/Input';
 import Typography from '@mui/joy/Typography';
-import MoreHoriz from '@mui/icons-material/MoreHoriz';
+import DeleteIcon from '@mui/icons-material/Delete';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import ModeCommentOutlined from '@mui/icons-material/ModeCommentOutlined';
 import SendOutlined from '@mui/icons-material/SendOutlined';
@@ -19,7 +19,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-export default function InstagramPreview( {image, user, userId, caption, postId}  ) {
+export default function InstagramPreview( {image, user, userId, caption, deletePost}  ) {
     const navigate = useNavigate()
 
     const clicked = () => {
@@ -64,7 +64,7 @@ export default function InstagramPreview( {image, user, userId, caption, postId}
                                  {/* USER */}
         <Typography fontWeight="lg">{user}</Typography>
         <IconButton variant="plain" color="neutral" size="sm" sx={{ ml: 'auto' }}>
-          <MoreHoriz />
+          <DeleteIcon onClick={deletePost}/>
         </IconButton>
       </Box>
       <CardOverflow>

@@ -12,15 +12,6 @@ const AddPost = ({user}) => {
     image: ""
   }
   const [formValues, setFormValues] = useState(initialFormValues)
-  const [thisUser, getUserData] = useState(initialFormValues)
-
-
-let x = ""
-  const userId = async () => {
-    x = await axios.get(`${BASE_URL}api/users/${user.id}`)
-    getUserData(x.data)
-  }
-  userId()
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
@@ -28,7 +19,7 @@ let x = ""
   
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await axios.post(`${BASE_URL}api/posts`)
+    await axios.post(`${BASE_URL}api/posts`, formValues)
     navigate(`/user/${user.id}`)
     }
 
@@ -72,7 +63,7 @@ return (
             <div className="child1">
             <h3>Post Preview:</h3>
             <div  className="post preview">
-            <InstagramPreview image={formValues.image} user={thisUser} userId={user.id} caption={formValues.caption}/>
+            <InstagramPreview image={formValues.image} user={user.displayName} userId={user.id} caption={formValues.caption}/>
             </div>
             </div>
         </div>
