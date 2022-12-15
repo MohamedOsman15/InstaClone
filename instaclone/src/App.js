@@ -50,7 +50,9 @@ function App() {
           />} />
           <Route path='/user/:userId' element={<Profile
           />} />
-          <Route path='/newpost' element={<AddPost /> } />
+          <Route path='/newpost' element={<AddPost
+          user = {user}
+          /> } />
         </Routes>
       </main>
       <footer>
