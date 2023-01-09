@@ -1,4 +1,4 @@
-# [InstaClone] (https://instaclone.up.railway.app/)
+# [InstaClone](https://instaclone.up.railway.app/)
 ## Date: 12/8/22
 ### Developed by:
 
