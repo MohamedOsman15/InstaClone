@@ -1,6 +1,6 @@
 import Axios from 'axios'
 
-export const BASE_URL = 'http://instaclonebackend-production.up.railway.app/'
+export const BASE_URL = 'https://instaclonebackend-production.up.railway.app/'
 
 const Client = Axios.create({ baseURL: BASE_URL })
 
